@@ -2,5 +2,4 @@ sklearn
 librosa
 numpy
 matplotlib
-librosa.display
 
