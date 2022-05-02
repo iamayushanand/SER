@@ -1,0 +1,5 @@
+sklearn
+pickle
+librosa
+numpy
+
