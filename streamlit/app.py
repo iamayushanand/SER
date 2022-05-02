@@ -6,6 +6,7 @@ import librosa
 st.write("Speech Emotion Recognizer")
 uploaded_file = st.file_uploader("Choose an audio file")
 model=pickle.load(open("MLP.sav","rb"))
+scaler=pickle.load(open("scaler.sav","rb"))
 emotions = {
     1 : "neutral",
     2 : "calm",
@@ -26,6 +27,7 @@ if uploaded_file is not None:
    X=[]
    X.append(mfcc)
    X=np.array(X)
+   X=scaler.transform(X)
    preds=model.predict(X)
    st.write("The emotion recognized is:")
    st.write(emotions[preds[0]])
