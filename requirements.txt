@@ -1,5 +1,4 @@
 sklearn
-pickle
 librosa
 numpy
 
